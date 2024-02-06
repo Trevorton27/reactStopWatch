@@ -17,7 +17,7 @@ const Stopwatch = () => {
   }, [isRunning, time]);
 
   // Hours calculation
-  const hours = Math.floor(time / 360000);
+  //const hours = Math.floor(time / 360000);
 
   // Minutes calculation
   const minutes = Math.floor((time % 360000) / 6000);
@@ -25,6 +25,8 @@ const Stopwatch = () => {
   // Seconds calculation
   const seconds = Math.floor((time % 6000) / 100);
 
+  console.log('time ', time);
+  console.log('minutes ', (time % 360000) / 6000);
   // Milliseconds calculation
   const milliseconds = time % 100;
 
@@ -37,12 +39,15 @@ const Stopwatch = () => {
   const reset = () => {
     setTime(0);
   };
+
+  const padWithZero = (value) => {
+    return value.toString().padStart(2, '0');
+  };
   return (
     <div className='stopwatch-container'>
       <p className='stopwatch-time'>
-        {hours}:{minutes.toString().padStart(2, '0')}:
-        {seconds.toString().padStart(2, '0')}:
-        {milliseconds.toString().padStart(2, '0')}
+        {padWithZero(minutes)}:{padWithZero(seconds)}:
+        {padWithZero(milliseconds)}
       </p>
       <div className='stopwatch-buttons'>
         <button className='stopwatch-button' onClick={startAndStop}>
