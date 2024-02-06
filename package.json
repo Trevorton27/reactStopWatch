@@ -11,10 +11,11 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage":"https://Trevorton27.github.io/reactStopWatch",
+ 
   
   "scripts": {
     "start": "react-scripts start",
+    "home page":"https://Trevorton27.github.io/reactStopWatch",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
